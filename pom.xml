@@ -27,7 +27,10 @@
     <license.plugin.version>4.1</license.plugin.version>
 
     <log4j.version>2.6.2</log4j.version>
-    <jetty.version>9.4.40.v20210413</jetty.version>
+    <!--<jetty.version>9.4.42.v20210604</jetty.version>-->
+    <!--<jetty.version>9.4.25.v20191220</jetty.version>-->
+    <!--<jetty.version>9.4.5.v20170502</jetty.version>-->
+    <jetty.version>9.4.43-SNAPSHOT</jetty.version>
   </properties>
 
   <dependencies>
@@ -42,9 +45,27 @@
       <version>${jetty.version}</version>
     </dependency>
     <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-rewrite</artifactId>
+      <version>${jetty.version}</version>
+    </dependency>
+    <dependency>
       <groupId>org.eclipse.jetty.websocket</groupId>
       <artifactId>javax-websocket-server-impl</artifactId>
       <version>${jetty.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty.toolchain</groupId>
+      <artifactId>jetty-test-helper</artifactId>
+      <version>5.5</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-http</artifactId>
+      <version>${jetty.version}</version>
+      <classifier>tests</classifier>
+      <scope>test</scope>
     </dependency>
   </dependencies>
   <build>
