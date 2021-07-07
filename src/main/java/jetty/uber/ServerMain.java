@@ -65,12 +65,7 @@ public class ServerMain
 
         context.getMimeTypes().addMimeMapping("txt", "text/plain;charset=utf-8");
 
-        context.addAliasCheck((path,resource)->{
-            System.out.printf("check(%s,%s)%n", path,resource);
-            return false;
-        });
         context.addAliasCheck(new CaseInsensitiveAliasChecker());
-//        context.addAliasCheck(new SameFileAliasChecker());
 
         server.setHandler(context);
 
